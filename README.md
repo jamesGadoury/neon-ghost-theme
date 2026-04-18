@@ -1,7 +1,8 @@
-# neon-ghost
+<p align="center">
+  <img src="assets/banner.svg" alt="neon-ghost — a vibrant neon-on-dark colorscheme for neovim" width="100%"/>
+</p>
 
-A vibrant neon-on-dark Neovim colorscheme. Cool-violet base, hot-pink keywords,
-electric-cyan functions, lime strings — modern, saturated, readable.
+# neon-ghost
 
 ## Requirements
 
@@ -15,7 +16,7 @@ electric-cyan functions, lime strings — modern, saturated, readable.
 
 ```lua
 {
-  "your-handle/neon-ghost-theme",
+  "jamesGadoury/neon-ghost-theme",
   name = "neon-ghost",
   lazy = false,
   priority = 1000,
@@ -32,7 +33,7 @@ electric-cyan functions, lime strings — modern, saturated, readable.
 
 ```lua
 use({
-  "your-handle/neon-ghost-theme",
+  "jamesGadoury/neon-ghost-theme",
   as = "neon-ghost",
   config = function()
     vim.cmd.colorscheme("neon-ghost")
