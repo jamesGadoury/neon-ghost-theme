@@ -1,0 +1,4 @@
+.luarc.json
+.luacache/
+*.luac
+.DS_Store
