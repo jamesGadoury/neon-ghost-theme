@@ -98,7 +98,7 @@ require("lualine").setup({
 | `purple`  | `#b07bff` | Operators, macros |
 | `lime`    | `#7dff6a` | Strings, diff add |
 | `orange`  | `#ff9e4a` | Numbers, constants |
-| `yellow`  | `#ffe867` | Types, classes |
+| `yellow`  | `#ffcc00` | Types, classes |
 | `blue`    | `#4fc3ff` | Variables, parameters |
 | `red`     | `#ff486f` | Errors, diff delete |
 | `teal`    | `#2ee6c0` | Hints, special, diff change-ish |

@@ -45,6 +45,45 @@ function M.apply(palette, cfg)
   util.apply(all)
 end
 
+-- Flashy overrides: applied after the base palette pass to add "glow" and
+-- extra emphasis. Keeps the default style clean and the flashy style loud.
+function M.flashy_overrides(p)
+  util.apply({
+    -- Glow underline on matching brackets — classic neon "halo" effect.
+    MatchParen       = { fg = p.cyan, sp = p.cyan,   style = { undercurl = true, bold = true } },
+
+    -- Bold all keywords/operators so definitions pop.
+    ["@keyword"]          = { fg = p.pink,   style = { bold = true } },
+    ["@keyword.function"] = { fg = p.pink,   style = { bold = true } },
+    ["@keyword.return"]   = { fg = p.pink,   style = { bold = true } },
+    ["@keyword.import"]   = { fg = p.purple, style = { bold = true } },
+    ["@keyword.operator"] = { fg = p.purple, style = { bold = true } },
+    ["@operator"]         = { fg = p.purple, style = { bold = true } },
+
+    -- Subtle magenta-tinted CursorLine to suggest a "scanline" glow.
+    CursorLine       = { bg = "#17102a" },
+    CursorLineNr     = { fg = p.pink, style = { bold = true } },
+
+    -- Flashier search highlights — high contrast swatches.
+    Search           = { fg = p.bg, bg = p.yellow, style = { bold = true } },
+    IncSearch        = { fg = p.bg, bg = p.pink,   style = { bold = true, underline = true } },
+    CurSearch        = { fg = p.bg, bg = p.pink,   style = { bold = true, underline = true } },
+
+    -- Title / heading emphasis.
+    Title            = { fg = p.pink,   style = { bold = true, underline = true } },
+    FloatTitle       = { fg = p.pink,   style = { bold = true } },
+
+    -- Strong visual selection contrast.
+    Visual           = { bg = p.bg_sel, style = { bold = true } },
+
+    -- Punchier diagnostic signs.
+    DiagnosticSignError = { fg = p.red,    style = { bold = true } },
+    DiagnosticSignWarn  = { fg = p.yellow, style = { bold = true } },
+    DiagnosticSignInfo  = { fg = p.cyan,   style = { bold = true } },
+    DiagnosticSignHint  = { fg = p.teal,   style = { bold = true } },
+  })
+end
+
 function M.terminal(palette)
   local g = vim.g
   g.terminal_color_0  = palette.hex.bg

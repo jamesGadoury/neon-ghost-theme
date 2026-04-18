@@ -17,10 +17,13 @@ function M.load()
   vim.g.colors_name = "neon-ghost"
   vim.o.background = "dark"
 
-  local palette = require("neon-ghost.palette")
+  local palette = require("neon-ghost.palette").with_style(config.options.style)
   local groups  = require("neon-ghost.groups")
 
   groups.apply(palette, config.options)
+  if config.options.style == "flashy" then
+    groups.flashy_overrides(palette)
+  end
   if config.options.terminal_colors then
     groups.terminal(palette)
   end
@@ -30,7 +33,7 @@ end
 -- instead of going through lualine's theme resolution.
 M.lualine = setmetatable({}, {
   __call = function()
-    local palette = require("neon-ghost.palette")
+    local palette = require("neon-ghost.palette").with_style(config.options.style)
     return require("neon-ghost.groups.plugins.lualine").build(palette)
   end,
 })

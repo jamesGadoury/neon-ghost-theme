@@ -1,6 +1,7 @@
 local M = {}
 
 M.defaults = {
+  style = "default",              -- "default" | "flashy" — flashy = peak-neon palette + extra emphasis
   transparent = false,
   terminal_colors = true,
   styles = {
